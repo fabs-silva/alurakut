@@ -5,7 +5,6 @@ import NextLink from 'next/link';
 const BASE_URL = 'http://alurakut.vercel.app/';
 const v = '1';
 
-
 function Link({ href, children, ...props }) {
   return (
     <NextLink href={href} passHref>
@@ -24,7 +23,7 @@ export function AlurakutMenu({ githubUser }) {
   return (
     <AlurakutMenu.Wrapper isMenuOpen={isMenuOpen}>
       <div className="container">
-        <AlurakutMenu.Logo src={`${BASE_URL}/logo.svg`} />
+        <AlurakutMenu.Logo src="/logo.svg" />
 
         <nav style={{ flex: 1 }}>
           {[{ name: 'Inicio', slug: '/'}, {name: 'Amigos', slug: '/amigos'}, {name: 'Comunidades', slug: '/comunidades'}].map((menuItem) => (
@@ -54,7 +53,7 @@ export function AlurakutMenu({ githubUser }) {
 }
 AlurakutMenu.Wrapper = styled.header`
   width: 100%;
-  background-color: #308BC5;
+  background-color: #34672c;
 
   .alurakutMenuProfileSidebar {
     background: white;
@@ -81,7 +80,7 @@ AlurakutMenu.Wrapper = styled.header`
     }
     .boxLink {
       font-size: 18px;
-      color: #2E7BB4;
+      color: #b6534b;
       -webkit-text-decoration: none;
       text-decoration: none;
       font-weight: 800;
@@ -96,7 +95,7 @@ AlurakutMenu.Wrapper = styled.header`
   }
 
   .container {
-    background-color: #308BC5;
+    background-color: #34672c;
     padding: 7px 16px;
     max-width: 1110px;
     margin: auto;
@@ -129,23 +128,26 @@ AlurakutMenu.Wrapper = styled.header`
         padding: 10px 16px;
         position: relative;
         text-decoration: none;
-        &:after {
-          content: " ";
-          background-color: #5292C1;
-          display: block;
-          position: absolute;
-          width: 1px;
-          height: 12px;
-          margin: auto;
-          left: 0;
-          top: 0;
-          bottom: 0;
+        
+        & + a {
+          &:after {
+            content: " ";
+            background-color: #84b43d;
+            display: block;
+            position: absolute;
+            width: 1px;
+            height: 12px;
+            margin: auto;
+            left: 0;
+            top: 0;
+            bottom: 0;
+          }
         }
       }
     }
     input {
       color: #ffffff;
-      background: #5579A1;
+      background: #4f9941;
       padding: 10px 42px;
       border: 0;
       background-image: url(${`${BASE_URL}/icons/search.svg`});
@@ -227,7 +229,7 @@ export function AlurakutProfileSidebarMenuDefault() {
 AlurakutProfileSidebarMenuDefault.Wrapper = styled.div`
   a {
     font-size: 12px;
-    color: #2E7BB4;
+    color: #b6534b;
     margin-bottom: 16px;
     display: flex;
     align-items: center;
@@ -329,7 +331,7 @@ const AlurakutLoginScreen = css`
     --backgroundSecondary: #F1F9FE;
     --backgroundTertiary: #FFFFFF;
     --backgroundQuarternary: #BBCDE8;
-    --colorPrimary: #2E7BB4;
+    --colorPrimary: #b6534b;
     --colorSecondary: #388BB0;
     --colorTertiary: #2F4A71;
     --colorQuarternary: #D81D99;

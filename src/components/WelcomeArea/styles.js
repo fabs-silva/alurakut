@@ -5,7 +5,7 @@ export const Container = styled.section`
   flex-direction: column;
   gap: 0.5rem;
   
-  @media(min-width: 1024px){
+  @media(min-width: 860px){
     grid-area: welcomeArea;
   }
 `;

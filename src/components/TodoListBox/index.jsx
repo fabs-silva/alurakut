@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Box } from '../Box';
 
+import { FormGroup, Button } from './styles';
+
 import { useCommunities } from '../../hooks/UseCommunities';
 
 export function TodoListBox() {
@@ -8,24 +10,28 @@ export function TodoListBox() {
 
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
+  const [link, setLink] = useState('');
 
   function handleCreateNewCommunity(event) {
     event.preventDefault();
 
     createCommunity({
+      id: new Date().toISOString(),
       title,
-      image
+      image,
+      link
     });
 
     setTitle('');
     setImage('');
+    setLink('');
   }
 
   return (
     <Box>
       <h3>O que você deseja fazer hoje?</h3>
       <form onSubmit={handleCreateNewCommunity}>
-        <fieldset>
+        <FormGroup>
           <input
             placeholder="Qual vai ser o nome da sua comunidade?"
             name="title"
@@ -34,8 +40,8 @@ export function TodoListBox() {
             value={title}
             onChange={e => setTitle(e.target.value)}
           />
-        </fieldset>
-        <fieldset>
+        </FormGroup>
+        <FormGroup>
           <input
             placeholder="Coloque uma URL para usarmos de capa"
             name="image"
@@ -44,10 +50,20 @@ export function TodoListBox() {
             value={image}
             onChange={e => setImage(e.target.value)}
           />
-        </fieldset>
-        <button type="submit">
+        </FormGroup>
+        <FormGroup>
+          <input
+            placeholder="Qual o link para sua comunidade?"
+            name="link"
+            aria-label="Qual o link para sua comunidade?"
+            type="text"
+            value={link}
+            onChange={e => setLink(e.target.value)}
+          />
+        </FormGroup>
+        <Button type="submit">
           Criar Comunidade
-        </button>
+        </Button>
       </form>
     </Box>
   )

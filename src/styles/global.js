@@ -4,15 +4,14 @@ import { AlurakutStyles } from '../lib/AluraCommons';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
-    --box-background: #fff;
-    --orkut-blue: #d4dcef;
-    --orkut-pink: #e95b95;
-    --text-title: #363f5f;
-    --text-body: #969cb3;
-    --header-background: #5c9ecf;
-    --highlight-button: #6f92bb;
-    --link: #2e7bb4;
-    --horizontal-line: #ecf2fa;
+    --box-background: #ffffff;
+    --background: #e9ebc8;
+    --text-title: #b6534b;
+    --text-body: #99aab5;
+    --header-background: #34672c;
+    --highlight-button: #84b43d;
+    --link: #4f9941;
+    --horizontal-line: #e9ebc8;
   }
 
   * {
@@ -32,8 +31,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: var(--orkut-blue);
+    background: url("background.jpg") center center no-repeat;
+    background-size: cover;
+    background-color: var(--background);
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
   }
 
   body, input, textarea, button{
@@ -69,7 +72,6 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     min-height: 100vh;
     width: 100%;
-    max-width: 1200px;
   }
 
   ${AlurakutStyles}

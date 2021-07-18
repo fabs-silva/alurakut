@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+export const Container = styled.aside`
+  display: none;
   gap: 0.5rem;
   
-  @media(min-width: 1024px){
+  @media(min-width: 860px){
     grid-area: profileArea;
+    display: block;
   }
 
   img{
