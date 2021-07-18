@@ -1,4 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+
+import { AlurakutStyles } from '../lib/AluraCommons';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
@@ -10,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     --header-background: #5c9ecf;
     --highlight-button: #6f92bb;
     --link: #2e7bb4;
+    --horizontal-line: #ecf2fa;
   }
 
   * {
@@ -38,13 +41,8 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
   }
 
-  h2, h3 {
+  h1, h2, h3, h4, h5, h6{
     font-weight: 400;
-    letter-spacing: 0.1rem;
-  }
-
-  h4{
-    font-weight: 600;
   }
 
   a{
@@ -68,7 +66,11 @@ export const GlobalStyle = createGlobalStyle`
 
   #__next{
     display: flex;
-    min-height: 100vh;
     flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1200px;
   }
+
+  ${AlurakutStyles}
 `
