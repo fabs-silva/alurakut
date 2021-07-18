@@ -61,7 +61,7 @@ export function TodoListBox() {
             onChange={e => setLink(e.target.value)}
           />
         </FormGroup>
-        <Button type="submit">
+        <Button type="submit" disabled>
           Criar Comunidade
         </Button>
       </form>
